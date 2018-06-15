@@ -1,0 +1,29 @@
+{
+  "name": "@guseyn/cutie-if-else",
+  "version": "1.0.0",
+  "description": "Cutie extension for work with if-else statements.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test-executor"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guseyn/cutie-if-else.git"
+  },
+  "keywords": [
+    "cutie",
+    "if",
+    "else"
+  ],
+  "dependencies": {
+    "@guseyn/cutie": "1.4.0",
+    "@guseyn/cutie-assert": "1.1.0",
+    "test-executor": "1.0.8"
+  },
+  "author": "guseyn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Guseyn/cutie-if-else/issues"
+  },
+  "homepage": "https://github.com/Guseyn/cutie-if-else#readme"
+}
