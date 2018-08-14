@@ -18,14 +18,18 @@ class If extends AsyncObject {
 
   definedSyncCall() {
     return (statement, action, nextStatement) => {
+      let result = false;
       if (statement) {
-        action().call();
-        return true;
-      } 
-      if (nextStatement) {
-        nextStatement().call();
+        let actionTree = action();
+        this.propagateCache(actionTree);
+        actionTree.call();
+        result = true;
+      } else if (nextStatement) {
+        let nextStatementTree = nextStatement();
+        this.propagateCache(nextStatementTree);
+        nextStatementTree.call();
       }
-      return false;
+      return result;
     }
   }
 

@@ -1,7 +1,7 @@
 'use strict'
 
 const {
-  AsyncObject
+  AsyncObject, as
 } = require('@guseyn/cutie');
 const {
   Assertion,
@@ -102,3 +102,11 @@ new EqualAssertion(
     )
   ), false
 ).call();
+
+new Statement(1, 1).as('s').after(
+  new Assertion(
+    new If(as('s'), new Action())
+  )
+).call();
+
+
