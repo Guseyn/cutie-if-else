@@ -28,8 +28,8 @@ If(
 
 | Async Object | Parameters(description) | Representation result |
 | ------------- | ----------------| ---------- |
-| `If` | `statement, action, next(ElseIf or Else)` | boolean value `statement` |
-| `ElseIf` | `statement, action, next(ElseIf or Else)` | boolean value `statement` |
+| `If` | `statement, action, next(ElseIf or Else)` | boolean value of `statement` |
+| `ElseIf` | `statement, action, next(ElseIf or Else)` | boolean value of `statement` |
 | `Else` | `action` | `void` |
 
 [npm-image]: https://img.shields.io/npm/v/@guseyn/cutie-if-else.svg
