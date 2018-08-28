@@ -12,7 +12,7 @@ You can find examples of using this library in the [test directory](https://gith
 ```js
 const {
   If, ElseIf, Else
-} = require('@guseyn/cutie-iterator');
+} = require('@guseyn/cutie-if-else');
 
 If(
  asyncTreeThatRepresentsBooleanStatement, asyncTreeThatIsBeingInvokedIfFirstArgumentIsTrue,   
