@@ -14,12 +14,12 @@ const {
   If, ElseIf, Else
 } = require('@guseyn/cutie-if-else');
 
-If(
+new If(
  asyncTreeThatRepresentsBooleanStatement, asyncTreeThatIsBeingInvokedIfFirstArgumentIsTrue,   
- ElseIf(
+ new ElseIf(
    anotherAsyncTreeThatRepresentsBooleanStatement, 
    anotherAsyncTreeThatIsBeingInvokedIfFirstArgumentIsTrue,
-   ElseIf(..., 
+   new ElseIf(..., 
     Else(otherwiseThisAsyncTreeIsBeingInvoked)
    )
  )
