@@ -12,7 +12,7 @@ You can find examples of using this library in the [test directory](https://gith
 ```js
 const {
   If, ElseIf, Else
-} = require('@guseyn/cutie-if-else');
+} = require('@cuties/if-else');
 
 new If(
  asyncTreeThatRepresentsBooleanStatement, asyncTreeThatIsBeingInvokedIfFirstArgumentIsTrue,   
@@ -32,5 +32,5 @@ new If(
 | `ElseIf` | `statement, action, next(ElseIf or Else)` | boolean value of `statement` |
 | `Else` | `action` | `void` |
 
-[npm-image]: https://img.shields.io/npm/v/@guseyn/cutie-if-else.svg
-[npm-url]: https://npmjs.org/package/@guseyn/cutie-if-else
+[npm-image]: https://img.shields.io/npm/v/@cuties/if-else.svg
+[npm-url]: https://npmjs.org/package/@cuties/if-else

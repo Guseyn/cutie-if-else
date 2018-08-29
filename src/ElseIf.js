@@ -2,6 +2,6 @@
 
 const {
   AsyncObject
-} = require('@guseyn/cutie');
+} = require('@cuties/cutie');
 
 module.exports = require('./If');
