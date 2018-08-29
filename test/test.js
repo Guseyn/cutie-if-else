@@ -2,11 +2,11 @@
 
 const {
   AsyncObject, as
-} = require('@guseyn/cutie');
+} = require('@cuties/cutie');
 const {
   Assertion,
   EqualAssertion
-} = require('@guseyn/cutie-assert');
+} = require('@cuties/assert');
 const {
   Else,
   ElseIf,
