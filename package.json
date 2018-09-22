@@ -1,6 +1,6 @@
 {
   "name": "@cuties/if-else",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Cutie extension for work with if-else statements.",
   "main": "index.js",
   "scripts": {
@@ -16,9 +16,9 @@
     "else"
   ],
   "dependencies": {
-    "@cuties/cutie": "1.4.3",
-    "@cuties/assert": "1.1.4",
-    "test-executor": "1.1.0"
+    "@cuties/cutie": "1.4.4",
+    "@cuties/assert": "1.1.5",
+    "test-executor": "1.1.2"
   },
   "author": "guseyn",
   "license": "MIT",
