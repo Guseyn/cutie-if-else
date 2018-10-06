@@ -17,6 +17,7 @@ class Else extends AsyncObject {
       let actionTree = action();
       this.propagateCache(actionTree);
       actionTree.call();
+      return true;
     }
   }
 
