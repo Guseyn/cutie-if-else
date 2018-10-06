@@ -30,7 +30,7 @@ new If(
 | ------------- | ----------------| ---------- |
 | `If` | `statement, action, next(ElseIf or Else)` | boolean value of `statement` |
 | `ElseIf` | `statement, action, next(ElseIf or Else)` | boolean value of `statement` |
-| `Else` | `action` | `void` |
+| `Else` | `action` | `true` |
 
 [npm-image]: https://img.shields.io/npm/v/@cuties/if-else.svg
 [npm-url]: https://npmjs.org/package/@cuties/if-else
