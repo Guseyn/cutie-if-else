@@ -4,7 +4,8 @@
   "description": "Cutie extension for work with if-else statements.",
   "main": "index.js",
   "scripts": {
-    "test": "node test-executor"
+    "test": "node test-executor",
+    "build": "node build"
   },
   "repository": {
     "type": "git",
@@ -16,14 +17,23 @@
     "else"
   ],
   "dependencies": {
-    "@cuties/cutie": "1.4.4",
-    "@cuties/assert": "1.1.5",
-    "test-executor": "1.1.2"
+    "@cuties/assert": "^1.1.11",
+    "@cuties/cutie": "^1.6.8",
+    "@cuties/wall": "^1.0.19",
+    "test-executor": "^1.1.34"
   },
   "author": "guseyn",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Guseyn/cutie-if-else/issues"
   },
-  "homepage": "https://github.com/Guseyn/cutie-if-else#readme"
+  "homepage": "https://github.com/Guseyn/cutie-if-else#readme",
+  "devDependencies": {
+    "eslint": "^5.14.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
 }

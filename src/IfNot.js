@@ -17,7 +17,7 @@ class If extends AsyncObject {
 
   definedSyncCall () {
     return (statement, action, nextStatement) => {
-      if (statement) {
+      if (!statement) {
         let actionTree = action()
         this.propagateCache(actionTree)
         actionTree.call()
@@ -26,7 +26,7 @@ class If extends AsyncObject {
         this.propagateCache(nextStatementTree)
         nextStatementTree.call()
       }
-      return statement
+      return !statement
     }
   }
 }

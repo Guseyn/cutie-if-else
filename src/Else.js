@@ -2,25 +2,23 @@
 
 const {
   AsyncObject
-} = require('@cuties/cutie');
+} = require('@cuties/cutie')
 
 class Else extends AsyncObject {
-
-  constructor(action) {
+  constructor (action) {
     super(() => {
-      return action;
-    });
+      return action
+    })
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (action) => {
-      let actionTree = action();
-      this.propagateCache(actionTree);
-      actionTree.call();
-      return true;
+      let actionTree = action()
+      this.propagateCache(actionTree)
+      actionTree.call()
+      return true
     }
   }
-
 }
 
-module.exports = Else;
+module.exports = Else

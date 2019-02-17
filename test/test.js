@@ -2,44 +2,41 @@
 
 const {
   AsyncObject, as
-} = require('@cuties/cutie');
+} = require('@cuties/cutie')
 const {
   Assertion,
-  EqualAssertion
-} = require('@cuties/assert');
+  StrictEqualAssertion
+} = require('@cuties/assert')
 const {
   Else,
   ElseIf,
-  If
-} = require('./../index');
+  If,
+  IfNot
+} = require('./../index')
 
 class Statement extends AsyncObject {
-
-  constructor(val1, val2) {
-    super(val1, val2);
+  constructor (val1, val2) {
+    super(val1, val2)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (val1, val2) => {
-      return val1 === val2;
+      return val1 === val2
     }
   }
-
 }
 
 class Action extends AsyncObject {
-
-  constructor(name) {
-    super(name);
+  constructor (name) {
+    super(name)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (name) => {
-      console.log(`action: ${name}`);
-      return true;
+      console.log(`action: ${name}`)
+      return true
     }
   }
-
 }
 
 new Assertion(
@@ -47,7 +44,7 @@ new Assertion(
     new Statement(1, 1),
     new Action('1 === 1')
   )
-).call();
+).call()
 
 new Assertion(
   new If(
@@ -59,21 +56,21 @@ new Assertion(
       )
     )
   )
-).call();
+).call()
 
 new Assertion(
   new If(
     new Statement(2, 2),
-    new EqualAssertion(
+    new StrictEqualAssertion(
       new If(
         new Statement(3, 4),
         new Action('3 !== 4')
       ), false
     )
   )
-).call();
+).call()
 
-new EqualAssertion(
+new StrictEqualAssertion(
   new If(
     new Statement(3, 4),
     new If(
@@ -86,7 +83,7 @@ new EqualAssertion(
       )
     )
   ), false
-).call();
+).call()
 
 new Assertion(
   new If(
@@ -99,7 +96,7 @@ new Assertion(
       new Action('6 is 6')
     )
   )
-).call();
+).call()
 
 new Assertion(
   new If(
@@ -118,7 +115,7 @@ new Assertion(
       new Action('8 is 8')
     )
   )
-).call();
+).call()
 
 new Assertion(
   new If(
@@ -126,7 +123,7 @@ new Assertion(
     new If(
       new Statement(7, 8),
       new Action('7 !== 8'),
-      new EqualAssertion(
+      new StrictEqualAssertion(
         new ElseIf(
           new Statement(8, 9),
           new Action('8 !== 9')
@@ -137,10 +134,33 @@ new Assertion(
       new Action('8 is 8')
     )
   )
-).call();
+).call()
 
 new Statement(10, 10).as('s').after(
   new Assertion(
     new If(as('s'), new Action('10 === 10'))
   )
-).call();
+).call()
+
+new Statement(11, 10).as('s').after(
+  new Assertion(
+    new IfNot(as('s'), new Action('11 !== 10'))
+  )
+).call()
+
+new Statement(10, 10).as('s').after(
+  new IfNot(
+    as('s'),
+    new Action('10 !== 10'),
+    new Else(
+      new Action('10 === 10')
+    )
+  )
+).call()
+
+new Statement(10, 10).as('s').after(
+  new IfNot(
+    as('s'),
+    new Action('10 !== 10')
+  )
+).call()
