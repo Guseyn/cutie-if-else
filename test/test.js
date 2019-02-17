@@ -164,4 +164,5 @@ new Statement(10, 10).as('s').after(
     new Action('10 !== 10')
   )
 ).call()
-throw new Error()
+
+new Assertion(false).call()
