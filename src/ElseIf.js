@@ -1,7 +1,3 @@
 'use strict'
 
-const {
-  AsyncObject
-} = require('@cuties/cutie');
-
-module.exports = require('./If');
+module.exports = require('./If')

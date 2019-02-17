@@ -4,7 +4,7 @@ const {
   AsyncObject
 } = require('@cuties/cutie')
 
-class If extends AsyncObject {
+class IfNot extends AsyncObject {
   constructor (statement, action, nextStatement) {
     super(
       statement, () => {
@@ -17,7 +17,7 @@ class If extends AsyncObject {
 
   definedSyncCall () {
     return (statement, action, nextStatement) => {
-      if (statement) {
+      if (!statement) {
         let actionTree = action()
         this.propagateCache(actionTree)
         actionTree.call()
@@ -26,9 +26,9 @@ class If extends AsyncObject {
         this.propagateCache(nextStatementTree)
         nextStatementTree.call()
       }
-      return statement
+      return !statement
     }
   }
 }
 
-module.exports = If
+module.exports = IfNot
