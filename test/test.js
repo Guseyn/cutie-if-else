@@ -19,7 +19,7 @@ class Statement extends AsyncObject {
     super(val1, val2)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (val1, val2) => {
       return val1 === val2
     }
@@ -31,7 +31,7 @@ class Action extends AsyncObject {
     super(name)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (name) => {
       console.log(`action: ${name}`)
       return true

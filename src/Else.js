@@ -11,7 +11,7 @@ class Else extends AsyncObject {
     })
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (action) => {
       let actionTree = action()
       this.propagateCache(actionTree)
