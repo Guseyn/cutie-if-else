@@ -15,7 +15,7 @@ class If extends AsyncObject {
     )
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (statement, action, nextStatement) => {
       if (statement) {
         let actionTree = action()
