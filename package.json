@@ -1,6 +1,6 @@
 {
   "name": "@cuties/if-else",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Cutie extension for work with if-else statements.",
   "main": "index.js",
   "scripts": {
