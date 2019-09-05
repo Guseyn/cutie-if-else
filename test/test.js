@@ -5,13 +5,17 @@ const {
 } = require('@cuties/cutie')
 const {
   Assertion,
-  StrictEqualAssertion
+  StrictEqualAssertion,
+  DeepStrictEqualAssertion
 } = require('@cuties/assert')
 const {
+  And,
   Else,
   ElseIf,
   If,
-  IfNot
+  IfNot,
+  Not,
+  Or
 } = require('./../index')
 
 class Statement extends AsyncObject {
@@ -163,4 +167,29 @@ new Statement(10, 10).as('s').after(
     as('s'),
     new Action('10 !== 10')
   )
+).call()
+
+new StrictEqualAssertion(
+  new And(true, false, true),
+  false
+).call()
+
+new StrictEqualAssertion(
+  new And(true, true, true),
+  true
+).call()
+
+new StrictEqualAssertion(
+  new Or(true, true, false),
+  true
+).call()
+
+new StrictEqualAssertion(
+  new Or(false, false, false),
+  false
+).call()
+
+new DeepStrictEqualAssertion(
+  new Not(false, true, false),
+  [true, false, true]
 ).call()

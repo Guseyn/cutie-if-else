@@ -47,3 +47,6 @@ new If(
 | `IfNot` | `statement, action, next(ElseIf or Else)` | boolean value of `!statement` |
 | `ElseIf` | `statement, action, next(ElseIf or Else)` | boolean value of `statement` |
 | `Else` | `action` | `true` |
+| `And` | `...statements` | `statements.every(s => s)` |
+| `Or` | `...statements` | `statements.some(s => s)` |
+| `Not` | `...statements` | `statements.map(s => !s)` |
